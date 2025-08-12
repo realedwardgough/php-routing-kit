@@ -1,0 +1,9 @@
+{
+    "name": "edward-gough/php-routing-kit",
+    "autoload": {
+        "psr-4": {
+             "App\\": "src/"
+        }
+    },
+    "require": {}
+}
