@@ -4,7 +4,7 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 // Routing control
-use App\Router;
+use App\Config\Router;
 $router = new Router();
 
 // Include the base routing file

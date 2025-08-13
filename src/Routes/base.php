@@ -4,7 +4,7 @@ namespace App\Routes;
 
 // Router using the following
 use App\Controllers\LoadController;
-
+use App\Config\View;
 
 /**
  * 
@@ -15,7 +15,9 @@ use App\Controllers\LoadController;
  * the route action. 
  * 
  */
-$router->get('/php-routing-kit/public', [LoadController::class, 'index']);
+$router->get('/php-routing-kit/public', function(){
+   echo View::make('Home', [], 'Layout-Example');
+});
 
 
 /**
@@ -28,5 +30,5 @@ $router->get('/php-routing-kit/public', [LoadController::class, 'index']);
  * 
  */
 $router->group('/php-routing-kit/public/admin', function ($router) {
-   $router->get('/dashboard', [LoadController::class, 'dashboard']);
+   echo View::make('Home', [], 'Layout-Example');
 });
