@@ -1,4 +1,4 @@
-@extends('Layout-Example')
+@extends('example-layout')
 @section('content')
    <!-- Hero -->
    <section class="hero">
