@@ -4,7 +4,7 @@ namespace App\Config;
 
 class View
 {
-    private static ?TemplateEngine $engine = null;
+    private static ?Template $engine = null;
     
     /**
      * Initialize the template engine
@@ -12,11 +12,11 @@ class View
     public static function init(): void
     {
         if (self::$engine === null) {
-            self::$engine = new TemplateEngine(
-                dirname(__DIR__) . '/Views',
-                dirname(__DIR__) . '/Views/Layouts',
-                dirname(__DIR__) . '/Views/Components',
-                dirname(__DIR__) . '/Storage/Cache/Views'
+            self::$engine = new Template(
+                dirname(__DIR__) . '/views',
+                dirname(__DIR__) . '/views/layouts',
+                dirname(__DIR__) . '/views/components',
+                dirname(dirname(__DIR__)) . '/storage/cache/views'
             );
         }
     }
@@ -51,7 +51,7 @@ class View
     /**
      * Get the template engine instance
      */
-    public static function engine(): TemplateEngine
+    public static function engine(): Template
     {
         self::init();
         return self::$engine;
