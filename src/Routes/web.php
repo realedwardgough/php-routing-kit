@@ -14,7 +14,7 @@ use App\Config\View;
  * the route action. 
  * 
  */
-$router->get('/php-routing-kit/public', function(){
+$router->get('/', function(){
    echo View::make('home', [], 'example-layout');
 });
 
@@ -28,7 +28,14 @@ $router->get('/php-routing-kit/public', function(){
  * you do not need to specify the prefix again within the group.
  * 
  */
-$router->group('/php-routing-kit/public/admin', function ($router) {
+$router->group('/admin', function ($router) {
+   
+   // Default admin view
+   $router->get('/', function(){
+      echo View::make('Home', [], 'example-layout');
+   });
+
+   // Dashboard admin view
    $router->get('/dashboard', function(){
       echo View::make('Home', [], 'example-layout');
    });
