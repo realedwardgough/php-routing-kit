@@ -8,7 +8,7 @@ use App\Config\Route;
 $router = new Route();
 
 // Include the base routing file
-require __DIR__ . '/../src/Routes/web.php';
+require __DIR__ . '/../src/Routes/route.php';
 
 //  Handle distpatch of route->view to screen
 $router->dispatch($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
